@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auth model</title>
+    <link rel="stylesheet" href="index.css" />
+
+    <script>
+      if (
+        localStorage.getItem("currentUser") &&
+        JSON.parse(localStorage.getItem("currentUser"))
+      ) {
+        window.location.href = "/dashboard.html";
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container" id="container">
+      <h1>Create An Account</h1>
+      <p>
+        Create an account to enjoy all the services without any ads for free!
+      </p>
+      <form onsubmit="submitData(event)" class="form">
+        <input
+          type="text"
+          id="fullName"
+          name="fullName"
+          class="input pl-10"
+          placeholder="Full Name"
+          required
+        />
+        <input
+          type="email"
+          id="email"
+          class="input mt-15"
+          placeholder="Email"
+          required
+        />
+        <input
+          type="password"
+          id="password"
+          class="input mt-15"
+          placeholder="Password"
+          required
+        />
+
+        <button class="submit" type="submit">Create Account</button>
+      </form>
+      <p>Already Have An Account? <a href="/signIn.html">Sign In</a></p>
+    </div>
+  </body>
+  <script src="index.js"></script>
+</html>

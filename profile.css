@@ -6,6 +6,12 @@
   margin: 0;
   box-sizing: border-box;
 }
+body{
+  height: 100vh;
+  width: 100vw;
+  max-height: 100vh;
+  overflow: hidden;
+}
 
 :root {
   --design_width: 1745;
@@ -13,26 +19,27 @@
   --width: calc(var(--current_width) / var(--design_width));
 }
 main {
-  background-color: #fff7cd;
+  background-color: #fff7cd 29%;
   display: flex;
-  padding: calc(141 * var(--width)) calc(153 * var(--width));
+  padding: calc(50 * var(--width)) calc(60 * var(--width));
   width: 100%;
   height: 100%;
-  /* gap: 10px; */
 }
 
 .sideBar {
+  background-color: #fff7cd;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 110px;
-  margin-top: 20px;
-  /* justify-content: center; */
+  gap: 20px;
 }
 .btn-container {
   display: flex;
   flex-direction: column;
   gap: 55px;
+  padding-bottom: 207px;
+}
+.logo {
+  padding: 29px;
 }
 button {
   border: none;
@@ -40,4 +47,87 @@ button {
   font-family: "Poppins", sans-serif;
   cursor: pointer;
   height: 24px;
+}
+.container {
+  display: flex;
+  border-radius: 35px;
+  gap: 20px;
+  background-color: #fbfaf4;
+  width: 1136px;
+  height: 740px;
+  left: 290px;
+  top: 34px;
+}
+.leftpart {
+  margin-left: 38px;
+  margin-top: 29px;
+}
+.overview {
+  font-family: "Poppins";
+  font-size: 48px;
+  line-height: 50px;
+}
+.para {
+  font-family: "Poppins";
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 32px;
+}
+.chart {
+  display: flex;
+  gap: 24px;
+}
+.average_score_container {
+  background-image: url(RoundLeaf.png);
+  background-repeat: no-repeat;
+  background-size: 150px;
+  background-position: left 150px top;
+  width: 300px;
+  height: 210px;
+  background-color: rgba(237, 237, 20, 0.881);
+  border-radius: 15px;
+  margin-top: 32px;
+}
+.average-container {
+  background-image: url(leaf.png);
+  background-repeat: no-repeat;
+  background-size: 60px;
+  background-position: left 25px top 20px;
+  padding-top: 120px;
+  padding-left:15px;
+
+}
+.analytic-container {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  width: 280px;
+  height: 190px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  margin-top: 32px;
+  font-family: "Poppins";
+  background-image: url(arrow.png);;
+  background-repeat: no-repeat;
+  background-position: left 200px top 15px;
+}
+.progress{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-family: Poppins;
+  font-size: 8px;
+  padding-top: 30px;
+}
+.bar-image{
+  width: 200px;
+}
+.heading{
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 0px;
+
+}
+.course-name{
+  display: grid;
 }

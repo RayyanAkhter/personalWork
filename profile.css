@@ -11,6 +11,7 @@ body{
   width: 100vw;
   max-height: 100vh;
   overflow: hidden;
+  font-family: poppins;
 }
 
 :root {
@@ -130,6 +131,60 @@ button {
 }
 .course-name{
   display: grid;
-  grid-template-columns: 5;
-  grid-template-rows: 5;
+  grid-template-columns: repeat(5,auto);
+  grid-template-rows: repeat(5,auto);
+  gap:20px;
+}
+.rightpart{
+  display: flex;
+  flex-direction: column;
+  /* gap: 10px; */
+  
+}
+.upperpart{
+  width: 430px;
+  height: 385px;
+  background-image: url(avatar.png);
+  background-repeat: no-repeat;
+  background-position: top 50px left 100px;
+  background-size: 240px;
+  text-align: center;
+  padding-top: 300px;
+  padding-left: 25px;
+}
+.lowerpart{
+  padding-left: 30px;
+}
+.reminder{
+  display: flex;
+  justify-content: space-between;
+}
+.lowerchild{
+  display: flex;
+  gap: 30px;
+  width: 397px;
+  border-radius: 16px;
+  height: 55px;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: white;
+  background-image: url(dot.png);
+  background-repeat: no-repeat;
+  background-position: center right 15px;
+}
+.upgrade{
+  margin-top: 20px;
+  width: 397px;
+  height: 155px;
+  background-color: rgba(237, 237, 20, 0.881);
+  background-image: url(TripleLeaf.png);
+  background-repeat: no-repeat;
+  background-position: left 220px top ;
+}
+.image{
+  padding-top: 95px;
+  padding-left: 40px;
+  background-image: url(leaf.png);
+  background-repeat: no-repeat;
+  background-position: top 5px left 80px;
 }

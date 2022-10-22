@@ -20,7 +20,8 @@ const login = (event) => {
   if (!currentUser) return alert("couldn't find user");
   if (currentUser.password !== passwordVal) return alert("password mismatch");
   localStorage.setItem("currentUser", JSON.stringify(currentUser));
-  window.location.href = "/profile.html";
+  window.location.href = "/dashboard.html";
 };
 const submitBtn = getById("button");
 submitBtn.addEventListener("click", login);
+

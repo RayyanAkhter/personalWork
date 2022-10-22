@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css" />
+    <script src="util.js"></script>
+  </head>
+  <body>
+    <main>
+      <section class="sideBar">
+        <img class="logo" src="Logo.png" alt="" />
+        <div class="btn-container">
+          <button id="overview" class="btns">Overview</button>
+          <button id="schedule" class="btns">Schedule</button>
+          <button id="ourse" class="btns">Course</button>
+          <button id="stattitic" class="btns">Stattitic</button>
+          <button id="setting" class="btns">Setting</button>
+        </div>
+        <button id="logoutBtn" class="logoutBtn">logout</button>
+      </section>
+      <section id="schedule" class="schedule">
+        <div class="schedule-upperpart">
+          <div class="part">
+            <div class="day"><h1>Wednesday</h1></div>
+            <div class="detailed-task">
+              <div class="initialsubject">
+                <input type="text" class="inputsubject" placeholder="Input Subject">
+              </div>
+              <form action="" class="content"></form>
+            </div>
+          </div>
+          <div class="part os">
+            <h1>Time</h1>
+            <div class="timechild">
+              <div class="lpart">
+                <div class="chapter"><input type="text" class="title" placeholder="chapter to read"></div>
+                <div><input type="time" class="time" /></div>
+              </div>
+              <div class="lpart">
+                <div class="chapter"><input type="text" class="title" placeholder="Input Subject"></div>
+                <div>
+                  <input type="time" class="time" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="schedule-lowerpart">
+          <div class="tasks">
+            <h1>MONDAY</h1>
+            <div class="subjects">
+              <input class="input" id="input" type="text" />
+              <div class="addimg" id="add">
+                <img src="add.png" alt="" srcset="" />
+              </div>
+            </div>
+          </div>
+          <div class="tasks">
+            <h1>TUESDAY</h1>
+            <div>
+              <input class="input" id="input" type="text" />
+              <div class="addimg" id="add">
+                <img src="add.png" alt="" srcset="" />
+              </div>
+            </div>
+          </div>
+          <div class="tasks">
+            <h1>WEDNESDAY</h1>
+            <div>
+              <input class="input" id="input" type="text" />
+              <div class="addimg" id="add">
+                <img src="add.png" alt="" srcset="" />
+              </div>
+            </div>
+          </div>
+          <div class="tasks">
+            <h1>THURSDAY</h1>
+            <div>
+              <input class="input" id="input" type="text" />
+              <div class="addimg" id="add">
+                <img src="add.png" alt="" srcset="" />
+              </div>
+            </div>
+          </div>
+          <div class="tasks">
+            <h1>FRIDAY</h1>
+            <div>
+              <input class="input" id="input" type="text" />
+              <div class="addimg" id="add">
+                <img src="add.png" alt="" srcset="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="dashboard.js"></script>
+  </body>
+</html>

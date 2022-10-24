@@ -4,7 +4,7 @@ if (
   localStorage.getItem("currentUser") &&
   JSON.parse(localStorage.getItem("currentUser"))
 ) {
-  window.location.href = "/dashboard.html";
+  window.location.href = "dashboard.html";
 }
 
 const login = (event) => {
@@ -20,7 +20,7 @@ const login = (event) => {
   if (!currentUser) return alert("couldn't find user");
   if (currentUser.password !== passwordVal) return alert("password mismatch");
   localStorage.setItem("currentUser", JSON.stringify(currentUser));
-  window.location.href = "/dashboard.html";
+  window.location.href = "dashboard.html";
 };
 const submitBtn = getById("button");
 submitBtn.addEventListener("click", login);

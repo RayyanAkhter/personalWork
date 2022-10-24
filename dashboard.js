@@ -105,25 +105,82 @@ const overviewHtml = `<section class="leftpart">
   </div>
 </div>
 </section>`;
-const schedueHtml = `<section class="schedue">
+const schedueHtml = (todaysTask) => ` <section id="schedule" class="schedule">
 <div class="schedule-upperpart">
-<div class="part">
-  <div class="day"> <h1>Wednesday</h1>
+  <div class="part">
+    <div class="day"><h1>Wednesday</h1></div>
+    <div class="detailed-task">
+      <div class="initialsubject">
+        <input type="text" class="inputsubject" value="${todaysTask.inputsubject}" id="inputsubjects" placeholder="Input Subject">
+      </div>
+      <textarea name="" class="content" id="inputchapter" placeholder="Chapters to read">${todaysTask.inputchapter}</textarea>
+    </div>
+    <button class="add" id="adds">Add </button>
   </div>
-  <div class="detailed-task"> 
-
+  <div class="part os">
+    <h1>Time</h1>
+    <div class="timechild">
+      <div class="lpart">
+        <div class="chapter"><input type="text" class="title" placeholder="Chapter to read"></div>
+        <div><input type="time" class="time" /></div>
+      </div>
+      <div class="lpart">
+        <div class="chapter"><input type="text" class="title" placeholder="Input Subject"></div>
+        <div>
+          <input type="time" class="time" />
+        </div>
+      </div>
+    </div>
   </div>
-</div>
-<div class="part 2"></div>
 </div>
 <div class="schedule-lowerpart">
-<div class="tasks"></div>
-<div class="tasks"></div>
-<div class="tasks"></div>
-<div class="tasks"></div>
-<div class="tasks"></div>
+  <div class="tasks">
+    <h1>MONDAY</h1>
+    <div class="subjects">
+      <input class="input" id="input" type="text" />
+      <div class="addimg" id="add">
+        <img src="add.png" alt="" srcset="" />
+      </div>
+    </div>
+  </div>
+  <div class="tasks">
+    <h1>TUESDAY</h1>
+    <div>
+      <input class="input" id="input" type="text" />
+      <div class="addimg" id="add">
+        <img src="add.png" alt="" srcset="" />
+      </div>
+    </div>
+  </div>
+  <div class="tasks">
+    <h1>WEDNESDAY</h1>
+    <div>
+      <input class="input" id="input" type="text" />
+      <div class="addimg" id="add">
+        <img src="add.png" alt="" srcset="" />
+      </div>
+    </div>
+  </div>
+  <div class="tasks">
+    <h1>THURSDAY</h1>
+    <div>
+      <input class="input" id="input" type="text" />
+      <div class="addimg" id="add">
+        <img src="add.png" alt="" srcset="" />
+      </div>
+    </div>
+  </div>
+  <div class="tasks">
+    <h1>FRIDAY</h1>
+    <div>
+      <input class="input" id="input" type="text" />
+      <div class="addimg" id="add">
+        <img src="add.png" alt="" srcset="" />
+      </div>
+    </div>
+  </div>
 </div>
-</schedule>`;
+</section>`;
 let option = localStorage.getItem("option")? localStorage.getItem("option"): OPTION_SELECTED_OVERVIEW;
 
 
@@ -137,11 +194,15 @@ const selectContainerc = () => {
   switch (option) {
     case OPTION_SELECTED_OVERVIEW:
       localStorage.setItem("option",OPTION_SELECTED_OVERVIEW)
+
       return overviewHtml;
 
     case OPTION_SELECTED_SCHEDULE:
+
       localStorage.setItem("option",OPTION_SELECTED_SCHEDULE)
-      return schedueHtml;
+      const todaysTask  = localStorage.todaytask ?  JSON.parse(localStorage.todaytask) : {inputsubject:"",inputchapter:""};
+      const html =  schedueHtml(todaysTask);
+      return html
   }
 };
 
@@ -166,10 +227,26 @@ const renderHtml = () => {
     const btn = getById("viewbtn");
     btn.addEventListener("click", toggleCourse);
   }
+  if (option === OPTION_SELECTED_SCHEDULE) {
+    const storedata = (e) => {
+      const inputsubject = getById("inputsubjects");
+      const inputchapter = getById("inputchapter");
+      submitData(inputsubject.value, inputchapter.value);
+    }
+    const submitData = (inputsubject, inputchapter) => {
+      let obj = {};
+      if (inputsubject) obj.inputsubject = inputsubject;
+      if (inputchapter) obj.inputchapter = inputchapter;
+      localStorage.setItem("todaytask", JSON.stringify(obj));
+      
+    };
+    const adds = getById("adds");
+    adds.addEventListener("click", storedata);
+  }
 };
 
 
-// renderHtml();
+renderHtml();
 
 document.getElementById("schedule").addEventListener("click",()=>{
   option = OPTION_SELECTED_SCHEDULE;
@@ -183,9 +260,5 @@ document.getElementById("overview").addEventListener("click",()=>{
 
 
 
-const addsubjects =() => {
-  const input = getById("input");
-  console.log(input.value);
-}
-const add = getById("add");
-add.addEventListener("click",addsubjects);
+
+

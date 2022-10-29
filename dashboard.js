@@ -4,6 +4,10 @@ const OPTION_SELECTED_COURSE = "course";
 const OPTION_SELECTED_STATTITIC = "stattitic";
 const OPTION_SELECTED_SETTING = "setting";
 const OPTION_SELECTED_ACCOUNT = "account";
+const OPTION_SELECTED_CHANGENAME = "changeName";
+const OPTION_SELECTED_CHANGEPASSWORD = "changePassword";
+const OPTION_SELECTED_CHANGEEMAIL = "changeEmail";
+
 
 const overviewHtml = `<section class="leftpart">
 <div class="overview">
@@ -123,14 +127,26 @@ const settingHtml = `<section id="setting" class="setting">
 <div>
 
   <div class="changediv" id="account"> Account</div>
-  <div class="changediv">Chnage name </div>
-  <div class="changediv">Change password</div>
-  <div class="changediv">Change email</div>
+  <div class="changediv" id="changeName">Change name </div>
+  <div class="changediv" id="changePassword">Change password</div>
+  <div class="changediv" id="changeEmail">Change email</div>
 </div>
 
 </section>`;
-const accountHtml = "welconme";
+const accountHtml = `  <section id="account" class="setting account">
+<div class="setUP"> <h1>Account</h1>
+</div>
+<div>
+  <img src="avatar.png" alt="">
+</div>
 
+<div>Name : <p id="currentName"></p></div>
+<div>Email : <p id="currentEmail"></p></div>
+<div>Password : <p id="currentPassword"></p></div>
+</section>`;
+const changeNameHtml = "wait to change your name";
+const changePasswordHtml = "wait to change your password";
+const changeEmailHtml = "wait to change your email";
 
 
 renderHtml();

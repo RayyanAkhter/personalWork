@@ -113,6 +113,13 @@ function initalize(element) {
   element.innerText = fullName;
 }
 
+function prsnlinformation(elemet ){
+  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+  const { email } = currentUser;
+  const { fullName } = currentUser;
+  const { password} = currentUser;
+}
+
 const schedueHtml = (
   todaysTask,
   beforeTime,
@@ -258,6 +265,15 @@ const selectContainerc = (option) => {
     case OPTION_SELECTED_ACCOUNT:
       localStorage.setItem("option", OPTION_SELECTED_ACCOUNT);
       return accountHtml;
+    case OPTION_SELECTED_CHANGENAME:
+        localStorage.setItem("option", OPTION_SELECTED_CHANGENAME);
+        return changeNameHtml;
+    case OPTION_SELECTED_CHANGEPASSWORD:
+        localStorage.setItem("option", OPTION_SELECTED_CHANGEPASSWORD);
+        return changePasswordHtml;
+    case OPTION_SELECTED_CHANGEEMAIL:
+        localStorage.setItem("option", OPTION_SELECTED_CHANGEEMAIL);
+        return changeEmailHtml;
   }
 };
 
@@ -277,6 +293,16 @@ const renderHtml = () => {
   if (option === OPTION_SELECTED_SETTING) {
     containersClickEventHandler("account", OPTION_SELECTED_ACCOUNT);
   }
+  if (option === OPTION_SELECTED_SETTING) {
+    containersClickEventHandler("changeName", OPTION_SELECTED_CHANGENAME);
+  }
+  if (option === OPTION_SELECTED_SETTING) {
+    containersClickEventHandler("changePassword", OPTION_SELECTED_CHANGEPASSWORD);
+  }
+  if (option === OPTION_SELECTED_SETTING) {
+    containersClickEventHandler("changeEmail", OPTION_SELECTED_CHANGEEMAIL);
+  }
+
 };
 
 function selectRenderHtml(value) {
